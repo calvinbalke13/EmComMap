@@ -25,14 +25,14 @@ const ADMIN_EMAIL = ""; // fill this in with the email contact for credentials r
 const RUN_LOCATION = "local";
 
 if(RUN_LOCATION == "my-install") {
-    var TILE_SERVER = 'http://<host>:8080/styles/klokantech-basic/{z}/{x}/{y}.png'; // set <host> to your tile server
+    var TILE_SERVER = 'http://<host>:8080/styles/basic-preview/{z}/{x}/{y}.svg'; // set <host> to your tile server
     var TILE_SERVER_OPTS = {
 	maxZoom: 18,
 	attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
 	    '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
 	    'Server courtesy of <a href="https://openmaptiles.com/">OpenMapTiles</a>'
     };
-    var DEFAULT_DB_HOST = '<host>'; // set <host> to your CouchDB server
+    var DEFAULT_DB_HOST = '127.0.0.1'; // set <host> to your CouchDB server
     var LOCAL_DB_NAME = 'emcommap';
 } else if(RUN_LOCATION=="local") {
 //

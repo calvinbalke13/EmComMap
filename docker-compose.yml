@@ -1,0 +1,21 @@
+version: '3'
+services:
+  emcomhttpd:
+    image: httpd:latest
+    restart: always
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes:
+      - ./html:/usr/local/apache2/htdocs 
+  couchserver:
+    image: couchdb
+    restart: always
+    ports:
+      - "5984:5984"
+    environment:
+      - COUCHDB_USER=admin
+      - COUCHDB_PASSWORD=changeme
+    volumes:
+        - ./dbdata:/opt/couchdb/data
+        - ./couch.d:/opt/couchdb/etc/local.d
